@@ -1,11 +1,11 @@
 {
   "name": "eqskavatori.ge",
   "version": "1.0.0",
-  "description": "Eqskavatori.ge — mini excavator services with operator in Tbilisi (ka/en/ru)",
+  "description": "Eqskavatori.ge \u2014 mini excavator services with operator in Tbilisi (ka/en/ru)",
   "private": true,
   "scripts": {
     "css": "tailwindcss -i src/input.css -o assets/styles.css --minify",
-    "build": "python3 tools/build.py && tailwindcss -i src/input.css -o assets/styles.css --minify"
+    "build": "python3 tools/build.py && tailwindcss -i src/input.css -o assets/styles.css --minify && python3 tools/build.py stamp"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.1",

@@ -3,7 +3,7 @@
 
 URLs:  /  (Georgian home, x-default)   /en/  /ru/   /{ka,en,ru}/<slug>/   /ka/ -> redirect to /
 Writes every page + index.md / index.html.md (AI copies) + sitemap.xml + robots.txt + llms.txt + llms-full.txt + 404.html.
-Run:  python3 tools/build.py && npm run css      (or: npm run build)
+Run:  npm run build   (= python3 tools/build.py && tailwind && python3 tools/build.py stamp)
 Idempotent. Content lives in tools/content.py.
 """
 import json
@@ -461,7 +461,25 @@ def llms(all_md):
     (ROOT / "llms-full.txt").write_text(f"# {BRAND} — full text of all pages\n\n" + "\n\n---\n\n".join(all_md), encoding="utf-8")
 
 
+def stamp_css():
+    """Cache-busting: link every page to styles.css?v=<content hash>. Run after the Tailwind build."""
+    import hashlib
+    v = hashlib.md5((ROOT / "assets" / "styles.css").read_bytes()).hexdigest()[:8]
+    n = 0
+    for p in ROOT.glob("**/*.html"):
+        if "node_modules" in p.parts:
+            continue
+        t = p.read_text(encoding="utf-8")
+        u = re.sub(r'href="/assets/styles\.css(\?v=[0-9a-f]+)?"', f'href="/assets/styles.css?v={v}"', t)
+        if u != t:
+            p.write_text(u, encoding="utf-8")
+            n += 1
+    print(f"styles.css?v={v} stamped on {n} pages")
+
+
 def main():
+    if sys.argv[1:] == ["stamp"]:
+        return stamp_css()
     all_md, groups = [], []
     for lang in LANGS:
         all_md.append(write_md(lang, build_home(lang)))
