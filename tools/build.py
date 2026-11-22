@@ -30,7 +30,7 @@ INDEXNOW_KEY = "82c7b423b13d3f83807f817236c9210d"
 ICON = lambda d, cls="h-6 w-6": f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{d}</svg>'
 PHONE_SVG = ICON('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/>', "h-5 w-5 shrink-0")
 WA_SVG = '<svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.6-.1 1.1Z"/></svg>'
-CHECK = ICON('<path d="M20 6 9 17l-5-5"/>', "mt-0.5 h-5 w-5 shrink-0 text-brand")
+CHECK = ICON('<path d="M20 6 9 17l-5-5"/>', "mt-0.5 h-5 w-5 shrink-0 text-brand-300")
 MAIL_SVG = ICON('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>', "h-5 w-5 shrink-0")
 PIN_SVG = ICON('<path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/>', "h-5 w-5 shrink-0")
 
@@ -62,7 +62,7 @@ def header(lang, urls):
     U = UI[lang]
     pills = "".join(
         f'<a href="{urls[l]}" hreflang="{l}" lang="{l}" class="grid h-9 min-w-9 place-items-center rounded-md px-2 text-xs font-bold '
-        + ('bg-brand text-zinc-950" aria-current="true"' if l == lang else 'text-zinc-300 hover:bg-zinc-800"')
+        + ('bg-brand text-white" aria-current="true"' if l == lang else 'text-zinc-300 hover:bg-zinc-800"')
         + f' title="{LANG_NAME[l]}">{LANG_SHORT[l]}</a>' for l in LANGS)
     home = home_url(lang)
     links = [(f"{home}#services", U["services"]), (f"/{lang}/{GUIDE['slug'][lang]}/", U["guide"]), ("#contact", U["contact"])]
@@ -72,12 +72,12 @@ def header(lang, urls):
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5">
     <a href="{home}" class="flex min-w-0 items-center gap-2" aria-label="{BRAND} — {U['home']}">
       <img src="/assets/favicon.svg" width="36" height="36" alt="" class="h-9 w-9 shrink-0">
-      <span class="truncate font-head text-lg font-extrabold tracking-tight text-white">Eqskavatori<span class="text-sky-400">.ge</span></span>
+      <span class="truncate font-head text-lg font-extrabold tracking-tight text-white">Eqskavatori<span class="text-brand-300">.ge</span></span>
     </a>
     <nav class="hidden items-center gap-6 text-sm text-zinc-300 md:flex" aria-label="{U['menu']}">{nav}</nav>
     <div class="flex items-center gap-2">
       <nav class="flex items-center gap-0.5 rounded-lg bg-zinc-900 p-0.5 ring-1 ring-zinc-800" aria-label="{U['lang_label']}">{pills}</nav>
-      <a href="tel:{PHONE}" class="hidden items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-zinc-950 hover:bg-brand-500 lg:inline-flex">{PHONE_SVG}{PHONE_FMT}</a>
+      <a href="tel:{PHONE}" class="hidden items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-bold text-white hover:bg-brand-600 lg:inline-flex">{PHONE_SVG}{PHONE_FMT}</a>
       <button id="navBtn" type="button" aria-label="{U['menu']}" aria-expanded="false" aria-controls="navMenu" class="grid h-10 w-10 place-items-center rounded-lg bg-zinc-900 ring-1 ring-zinc-800 md:hidden">{ICON('<path d="M4 7h16M4 12h16M4 17h16"/>', "h-5 w-5")}</button>
     </div>
   </div>
@@ -92,7 +92,7 @@ def footer(lang, urls):
     return f'''<footer class="border-t border-zinc-800 bg-zinc-950 pb-24 md:pb-0">
   <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
     <div>
-      <div class="flex items-center gap-2"><img src="/assets/favicon.svg" width="32" height="32" alt="" class="h-8 w-8"><span class="font-head text-lg font-extrabold text-white">Eqskavatori<span class="text-sky-400">.ge</span></span></div>
+      <div class="flex items-center gap-2"><img src="/assets/favicon.svg" width="32" height="32" alt="" class="h-8 w-8"><span class="font-head text-lg font-extrabold text-white">Eqskavatori<span class="text-brand-300">.ge</span></span></div>
       <p class="mt-3 text-sm text-zinc-400">{U['footer']}</p>
       <p class="mt-4 text-sm"><a href="tel:{PHONE}" class="font-semibold text-white">{PHONE_FMT}</a> · <a href="mailto:{EMAIL}" class="text-zinc-300">{EMAIL}</a></p>
     </div>
@@ -112,7 +112,7 @@ def footer(lang, urls):
 def mobile_bar(lang, topic):
     U = UI[lang]
     return f'''<div class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-zinc-800 bg-zinc-950/95 p-2 backdrop-blur md:hidden" style="padding-bottom:max(.5rem,env(safe-area-inset-bottom))">
-  <a href="tel:{PHONE}" class="flex h-12 items-center justify-center gap-2 rounded-xl bg-brand font-bold text-zinc-950">{PHONE_SVG}{U['call']}</a>
+  <a href="tel:{PHONE}" class="flex h-12 items-center justify-center gap-2 rounded-xl bg-brand font-bold text-white">{PHONE_SVG}{U['call']}</a>
   <a href="{wa_link(lang, topic)}" class="flex h-12 items-center justify-center gap-2 rounded-xl bg-[#15803d] font-bold text-white">{WA_SVG}WhatsApp</a>
 </div>'''
 
@@ -120,7 +120,7 @@ def mobile_bar(lang, topic):
 def cta_buttons(lang, topic):
     U = UI[lang]
     return (f'<div class="mt-7 flex flex-col gap-3 sm:flex-row">'
-            f'<a href="tel:{PHONE}" class="flex h-13 items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-lg font-bold text-zinc-950 hover:bg-brand-500">{PHONE_SVG}{U["call"]} {PHONE_FMT}</a>'
+            f'<a href="tel:{PHONE}" class="flex h-13 items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-lg font-bold text-white hover:bg-brand-600">{PHONE_SVG}{U["call"]} {PHONE_FMT}</a>'
             f'<a href="{wa_link(lang, topic)}" class="flex h-13 items-center justify-center gap-2 rounded-xl bg-[#15803d] px-6 py-3.5 text-lg font-bold text-white">{WA_SVG}WhatsApp</a></div>')
 
 
@@ -150,9 +150,9 @@ def contact_section(lang, topic):
     <h2 class="font-head text-3xl font-extrabold">{U['contact_h']}</h2>
     <p class="mt-3 max-w-2xl text-zinc-300">{U['contact_p']}</p>
     <div class="mt-8 grid gap-3 sm:grid-cols-3">
-      <a href="tel:{PHONE}" class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800 hover:ring-brand/60"><span class="text-brand">{PHONE_SVG}</span><span><span class="block text-sm text-zinc-400">{U['phone']}</span><span class="font-bold">{PHONE_FMT}</span></span></a>
-      <a href="mailto:{EMAIL}" class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800 hover:ring-brand/60"><span class="text-brand">{MAIL_SVG}</span><span><span class="block text-sm text-zinc-400">{U['email']}</span><span class="font-bold">{EMAIL}</span></span></a>
-      <div class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800"><span class="text-brand">{PIN_SVG}</span><span><span class="block text-sm text-zinc-400">{U['area']}</span><span class="font-bold">{U['area_v']}</span></span></div>
+      <a href="tel:{PHONE}" class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800 hover:ring-brand/60"><span class="text-brand-300">{PHONE_SVG}</span><span><span class="block text-sm text-zinc-400">{U['phone']}</span><span class="font-bold">{PHONE_FMT}</span></span></a>
+      <a href="mailto:{EMAIL}" class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800 hover:ring-brand/60"><span class="text-brand-300">{MAIL_SVG}</span><span><span class="block text-sm text-zinc-400">{U['email']}</span><span class="font-bold">{EMAIL}</span></span></a>
+      <div class="flex items-center gap-3 rounded-2xl bg-zinc-950 p-5 ring-1 ring-zinc-800"><span class="text-brand-300">{PIN_SVG}</span><span><span class="block text-sm text-zinc-400">{U['area']}</span><span class="font-bold">{U['area_v']}</span></span></div>
     </div>
     {cta_buttons(lang, topic)}
   </div>
@@ -210,7 +210,7 @@ def page(lang, url, urls, title, desc, kw, schema, body, topic, og_type="website
 </script>
 </head>
 <body class="bg-zinc-950 font-sans text-zinc-100 antialiased">
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-brand focus:px-3 focus:py-2 focus:text-zinc-950">↓</a>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-brand focus:px-3 focus:py-2 focus:text-white">↓</a>
 {header(lang, urls)}
 <main id="main">
 {body}
@@ -241,10 +241,11 @@ def breadcrumb_html(items):
     return '<nav aria-label="breadcrumb" class="mb-4 text-sm text-zinc-400">' + ' <span aria-hidden="true">/</span> '.join(parts) + "</nav>"
 
 
-def service_card(s, lang):
+def service_card(s, lang, featured=False):
     d = s[lang]
-    return (f'<a href="{svc_url(s, lang)}" class="group flex items-start gap-4 rounded-2xl bg-zinc-900 p-5 ring-1 ring-zinc-800 transition hover:ring-brand/60">'
-            f'<span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue text-brand">{ICON(s["icon"])}</span>'
+    span = " sm:col-span-2 lg:col-span-3 bg-gradient-to-r from-brand/25 to-zinc-900 ring-brand/40" if featured else " bg-zinc-900 ring-zinc-800"
+    return (f'<a href="{svc_url(s, lang)}" class="group flex items-start gap-4 rounded-2xl p-5 ring-1 transition hover:ring-brand-300/60{span}">'
+            f'<span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-300/10 text-brand-300 ring-1 ring-brand-300/25">{ICON(s["icon"])}</span>'
             f'<span class="min-w-0"><span class="block font-head text-lg font-bold leading-snug text-white group-hover:text-brand-300">{escape(d["h1"])}</span>'
             f'<span class="mt-1 block text-sm text-zinc-400">{escape(d["card"])}</span></span></a>')
 
@@ -254,13 +255,13 @@ def build_home(lang):
     U, H = UI[lang], HOME[lang]
     urls = {l: home_url(l) for l in LANGS}
     faq = [U["faq_price"], U["faq_operator"], U["faq_bobcat"], U["faq_area"]]
-    steps = "".join(f'<li class="rounded-2xl bg-zinc-900 p-5 ring-1 ring-zinc-800"><span class="grid h-9 w-9 place-items-center rounded-full bg-brand font-bold text-zinc-950">{i + 1}</span>'
+    steps = "".join(f'<li class="rounded-2xl bg-zinc-900 p-5 ring-1 ring-zinc-800"><span class="grid h-9 w-9 place-items-center rounded-full bg-brand font-bold text-white">{i + 1}</span>'
                     f'<h3 class="mt-3 font-semibold">{escape(t)}</h3><p class="mt-1 text-sm text-zinc-400">{escape(p)}</p></li>' for i, (t, p) in enumerate(U["steps"]))
     why = "".join(f'<li class="rounded-2xl bg-zinc-900 p-5 ring-1 ring-zinc-800"><h3 class="font-semibold text-brand-300">{escape(t)}</h3><p class="mt-1 text-sm text-zinc-300">{escape(p)}</p></li>' for t, p in U["why"])
     guide = f"/{lang}/{GUIDE['slug'][lang]}/"
     body = f'''<section class="mx-auto grid max-w-6xl gap-8 px-4 pb-12 pt-6 lg:grid-cols-[1fr_420px] lg:items-center lg:pt-12">
   <div>
-    <p class="inline-flex rounded-full bg-blue/30 px-3 py-1 text-xs font-semibold text-blue-400 ring-1 ring-blue/50">{escape(H['kicker'])}</p>
+    <p class="inline-flex rounded-full bg-brand-300/10 px-3 py-1 text-xs font-semibold text-brand-300 ring-1 ring-brand-300/25">{escape(H['kicker'])}</p>
     <h1 class="mt-4 font-head text-4xl font-extrabold leading-tight sm:text-5xl">{escape(H['h1'])}</h1>
     <p class="mt-4 text-lg leading-relaxed text-zinc-300">{escape(H['lead'])}</p>
     {cta_buttons(lang, H['h1'])}
@@ -271,7 +272,7 @@ def build_home(lang):
 <section id="services" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-12">
   <h2 class="font-head text-3xl font-extrabold">{escape(H['services_h'])}</h2>
   <p class="mt-2 text-zinc-400">{escape(H['services_p'])}</p>
-  <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{"".join(service_card(s, lang) for s in S)}</div>
+  <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{service_card(S[0], lang, featured=True)}{"".join(service_card(s, lang) for s in S[1:])}</div>
   <p class="mt-6 text-zinc-300">{escape(H['synonyms'])} <a href="{guide}" class="font-semibold text-brand-300">{escape(H['guide_cta'])}</a></p>
 </section>
 
@@ -310,7 +311,7 @@ def build_service(s, lang):
     body = f'''<section class="mx-auto grid max-w-6xl gap-8 px-4 pb-10 pt-6 lg:grid-cols-[1fr_360px] lg:pt-10">
   <div>
     {breadcrumb_html(crumbs)}
-    <p class="inline-flex items-center gap-2 rounded-full bg-blue/30 px-3 py-1 text-xs font-semibold text-blue-400 ring-1 ring-blue/50"><span class="text-brand">{ICON(s['icon'], 'h-4 w-4')}</span>{U['operator_badge']}</p>
+    <p class="inline-flex items-center gap-2 rounded-full bg-brand-300/10 px-3 py-1 text-xs font-semibold text-brand-300 ring-1 ring-brand-300/25"><span>{ICON(s['icon'], 'h-4 w-4')}</span>{U['operator_badge']}</p>
     <h1 class="mt-4 font-head text-3xl font-extrabold leading-tight sm:text-5xl">{escape(d['h1'])}</h1>
     <p class="mt-4 text-lg leading-relaxed text-zinc-300">{escape(d['lead'])}</p>
     {cta_buttons(lang, d['h1'])}

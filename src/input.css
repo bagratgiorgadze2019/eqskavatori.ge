@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #facc15;       /* yellow — CTAs (dark text on top) */
-  --color-brand-300: #fde047;   /* accent text on dark */
-  --color-brand-500: #eab308;   /* hover */
-  --color-blue: #1d4ed8;        /* machine blue — logo, badges */
-  --color-blue-400: #60a5fa;
+  --color-brand: #1a6fc4;       /* logo blue, darkened for AA contrast with white text (5:1) */
+  --color-brand-600: #155da6;   /* hover */
+  --color-brand-300: #8fd0ff;   /* light logo blue — accents/links on dark */
+  --color-brand-100: #c0eaff;   /* logo fill */
   --font-sans: "Inter", "Noto Sans Georgian", ui-sans-serif, system-ui, sans-serif;
   --font-head: "Manrope", "Noto Sans Georgian", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
