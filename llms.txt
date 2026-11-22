@@ -1,0 +1,29 @@
+# Eqskavatori.ge
+
+> Mini excavator services with an operator in Tbilisi, Georgia (and surroundings): earthworks, trench digging, foundation excavation, septic tank installation, sewer and water line installation, site levelling, hydraulic breaker (concrete breaking), post hole drilling (auger), demolition, landscaping and construction debris removal with our own truck. The machine always comes with our operator. Prices are agreed in advance by phone/WhatsApp (they depend on the job). Languages: Georgian, English, Russian.
+
+- Phone / WhatsApp: +995514908090 (514 90 80 90) — https://wa.me/995514908090
+- Email: info@eqskavatori.ge
+- Area: Tbilisi and surroundings; further by agreement
+
+## Pages (Georgian · English · Russian)
+
+- Home: https://eqskavatori.ge/ · https://eqskavatori.ge/en/ · https://eqskavatori.ge/ru/
+- Mini excavator hire with operator (მინი ექსკავატორის ქირაობა ოპერატორით): https://eqskavatori.ge/ka/mini-eqskavatoris-qiraoba/ · https://eqskavatori.ge/en/mini-excavator-hire/ · https://eqskavatori.ge/ru/arenda-mini-ekskavatora/
+- Earthworks with a mini excavator (მიწის სამუშაოები მინი ექსკავატორით): https://eqskavatori.ge/ka/mitsis-samushaoebi/ · https://eqskavatori.ge/en/earthworks/ · https://eqskavatori.ge/ru/zemlyanye-raboty/
+- Trench digging (ტრანშეის გათხრა): https://eqskavatori.ge/ka/tranzheis-gatxra/ · https://eqskavatori.ge/en/trench-digging/ · https://eqskavatori.ge/ru/kopka-transhei/
+- Foundation excavation (საძირკვლის გათხრა): https://eqskavatori.ge/ka/sadzirkvlis-gatxra/ · https://eqskavatori.ge/en/foundation-excavation/ · https://eqskavatori.ge/ru/kopka-kotlovana-pod-fundament/
+- Septic tank installation (სეპტიკის გაკეთება): https://eqskavatori.ge/ka/septikis-mowyoba/ · https://eqskavatori.ge/en/septic-tank-installation/ · https://eqskavatori.ge/ru/yama-pod-septik/
+- Sewer line installation (კანალიზაციის გაყვანა): https://eqskavatori.ge/ka/kanalizaciis-gayvana/ · https://eqskavatori.ge/en/sewer-line-installation/ · https://eqskavatori.ge/ru/prokladka-kanalizacii/
+- Water line installation (წყალსადენის მილის გაყვანა): https://eqskavatori.ge/ka/wyalsadenis-gayvana/ · https://eqskavatori.ge/en/water-line-installation/ · https://eqskavatori.ge/ru/prokladka-vodoprovoda/
+- Yard and site levelling (ეზოს და ტერიტორიის მოსწორება): https://eqskavatori.ge/ka/ezos-mosworeba/ · https://eqskavatori.ge/en/site-levelling/ · https://eqskavatori.ge/ru/planirovka-uchastka/
+- Concrete breaking with a hydraulic breaker (ბეტონის მტვრევა კოდალით): https://eqskavatori.ge/ka/betonis-mtvreva-kodalit/ · https://eqskavatori.ge/en/hydraulic-breaker/ · https://eqskavatori.ge/ru/gidromolot/
+- Post hole drilling (ორმოების ბურღვა): https://eqskavatori.ge/ka/ormoebis-burghva/ · https://eqskavatori.ge/en/post-hole-drilling/ · https://eqskavatori.ge/ru/burenie-yam/
+- Construction debris loading and removal (სამშენებლო ნაგვის დატვირთვა და გატანა): https://eqskavatori.ge/ka/nagvis-gatana/ · https://eqskavatori.ge/en/debris-removal/ · https://eqskavatori.ge/ru/vyvoz-stroitelnogo-musora/
+- Demolition with a mini excavator (დემონტაჟი მინი ექსკავატორით): https://eqskavatori.ge/ka/demontazhi/ · https://eqskavatori.ge/en/demolition/ · https://eqskavatori.ge/ru/demontazh/
+- Garden and landscaping work (ბაღისა და ლანდშაფტის სამუშაოები): https://eqskavatori.ge/ka/landshaftis-samushaoebi/ · https://eqskavatori.ge/en/landscaping/ · https://eqskavatori.ge/ru/landshaftnye-raboty/
+- Guide — what can a mini excavator do: https://eqskavatori.ge/ka/ra-sheudzlia-mini-eqskavators/ · https://eqskavatori.ge/en/what-can-a-mini-excavator-do/ · https://eqskavatori.ge/ru/chto-mozhet-mini-ekskavator/
+
+## Machine-readable copies
+
+Every page has a Markdown copy at <page>/index.md (also index.html.md). Full text of all pages: https://eqskavatori.ge/llms-full.txt
